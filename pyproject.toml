@@ -1,0 +1,19 @@
+[project]
+name = "odoo-sales-automation"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "pytest>=9.2.0",
+    "pytest-html>=4.2.0",
+    "pytest-playwright>=0.10.0",
+    "pytest-xdist>=3.8.0",
+    "python-dotenv>=1.2.4",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts ="--tracing retain-on-failure --screenshot only-on-failure --html=reports/report.html --self-contained-html"
+markers = [
+    "smoke: mark a test as a smoke test",
+    "negative: mark a test as negative"
+]
